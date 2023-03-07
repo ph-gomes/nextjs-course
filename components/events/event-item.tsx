@@ -1,4 +1,5 @@
 import { IEvent } from "@/types";
+import Image from "next/image";
 import Link from "next/link";
 import classes from "./event-item.module.css";
 
@@ -17,7 +18,9 @@ export const EventItem = (props: { item: IEvent }) => {
 
   return (
     <li className={classes.item} key={id}>
-      <img src={`/${image}`} alt={title} />
+      <div className={classes.image}>
+        <Image src={`/${image}`} alt={title} fill />
+      </div>
       <div className={classes.content}>
         <div className={classes.summary}>
           <h2>{title}</h2>
