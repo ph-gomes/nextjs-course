@@ -18,9 +18,14 @@ export const EventItem = (props: { item: IEvent }) => {
 
   return (
     <li className={classes.item} key={id}>
-      <div className={classes.image}>
-        <Image src={`/${image}`} alt={title} fill />
-      </div>
+      <Image
+        className={classes.image}
+        src={`/${image}`}
+        alt={title}
+        width={1366}
+        height={768}
+        priority
+      />
       <div className={classes.content}>
         <div className={classes.summary}>
           <h2>{title}</h2>
