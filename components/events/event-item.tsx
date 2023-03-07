@@ -1,5 +1,6 @@
 import { IEvent } from "@/types";
 import Link from "next/link";
+import classes from "./event-item.module.css";
 
 export const EventItem = (props: { item: IEvent }) => {
   const { title, image, date, location, id } = props.item;
@@ -15,18 +16,22 @@ export const EventItem = (props: { item: IEvent }) => {
   const exploreLink = `/events/${id}`;
 
   return (
-    <li key={id}>
+    <li className={classes.item} key={id}>
       <img src={`/${image}`} alt={title} />
-      <div>
-        <h2>{title}</h2>
-        <div>
-          <time>{readableDate}</time>
+      <div className={classes.content}>
+        <div className={classes.summary}>
+          <h2>{title}</h2>
+          <div className={classes.date}>
+            <time>{readableDate}</time>
+          </div>
+          <div className={classes.address}>
+            <address>{formattedAddress}</address>
+          </div>
         </div>
         <div>
-          <address>{formattedAddress}</address>
-        </div>
-        <div>
-          <Link href={exploreLink}>Explore Event</Link>
+          <Link className={classes.actions} href={exploreLink}>
+            Explore Event
+          </Link>
         </div>
       </div>
     </li>
