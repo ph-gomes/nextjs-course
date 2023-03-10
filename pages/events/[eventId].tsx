@@ -1,6 +1,7 @@
 import { EventContent } from "@/components/event-detail/event-content";
 import { EventLogistics } from "@/components/event-detail/event-logistics";
 import { EventSummary } from "@/components/event-detail/event-summary";
+import { Button } from "@/components/ui/button";
 import { ErrorAlert } from "@/components/ui/error-alert/error-alert";
 import { getEventById } from "@/dummy-data";
 import { useRouter } from "next/router";
@@ -13,9 +14,12 @@ export const EventDetailPage = () => {
 
   if (!event) {
     return (
-      <ErrorAlert>
-        <p>No event found!</p>
-      </ErrorAlert>
+      <div className="center">
+        <ErrorAlert>
+          <p>No event found!</p>
+        </ErrorAlert>
+        <Button link="/events">Show All Events</Button>
+      </div>
     );
   }
 

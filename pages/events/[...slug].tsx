@@ -32,7 +32,7 @@ export const FilteredEventsPage = () => {
           <p>Invalid Filter. Please adjust your values!</p>
         </ErrorAlert>
         <div className="center">
-          <Button link="./events">Show All Events</Button>
+          <Button link="/events">Show All Events</Button>
         </div>
       </>
     );
@@ -47,7 +47,7 @@ export const FilteredEventsPage = () => {
           <p className="center">No events found for the chosen filter!</p>
         </ErrorAlert>
         <div className="center">
-          <Button link="./events">Show All Events</Button>
+          <Button link="/events">Show All Events</Button>
         </div>
       </>
     );
